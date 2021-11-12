@@ -1,0 +1,14 @@
+<h1 class="Home-title">
+    Welcome to the Counselling Session
+</h1>
+
+<h2>Select the role
+<h3 class="Home-authenticate">
+    <%= link_to "Faculty",faculties_path %>
+    <% @role="Faculty" %>
+</h3>
+
+<h3 class="Home-authenticate">
+    <%= link_to "Student", students_path %>
+    <% @role="Student" %>
+</h3>

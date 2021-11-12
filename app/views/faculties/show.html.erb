@@ -1,0 +1,12 @@
+<h1><%= @faculty.name %></h1>
+Select students:
+<ul>
+<% @students.each do|student| %>
+<li>
+<p>
+  <%= student.name %>
+</p>
+
+</li>
+<% end %>
+</ul>

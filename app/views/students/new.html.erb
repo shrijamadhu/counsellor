@@ -1,0 +1,45 @@
+<p class="User-title">Welcome new Student</p>
+   <section class="New-user">
+      <%= form_with url: students_path do |form| %>
+         <div class="Form-section">
+            <p class="Form-label">PIN:</p>
+            <%= form.text_field :pin ,class: "Form-input",
+                autofocus: "autofocus"
+            %>
+         </div>
+         <div class="Form-section">
+            <p class="Form-label">Name:</p>
+            <%= form.text_field :name ,class: "Form-input",
+                autofocus: "autofocus"
+            %>
+         </div>
+
+         <div class="Form-section">
+            <p class="Form-label">Branch:</p>
+            <%= form.select :branch, ["CSE","ECE","ME","AME","CE","EEE","MM","PET"] %>
+         </div>
+
+         <div class="Form-section">
+            <p class="Form-label">Year:</p>
+            <%= form.select :year, ["I","II","III","IV"] %>
+         </div>
+         <div class="Form-section">
+            <p class="Form-label">Section:</p>
+            <%= form.select :section, ["A","B","C"] %>
+         </div>
+
+         <div class="Form-section" >
+            <p class="Form-label">Email:</p>
+            <%= form.email_field :email ,class: "Form-input" %>
+         </div>
+
+         <div class="Form-section" >
+            <p class="Form-label">Password:</p>
+            <%= form.password_field :password ,class: "Form-input" %>
+         </div>
+
+         <div class="Form-section" >
+            <%= form.submit "Sign Up" ,class: "Form-submit" %>
+         </div>
+      <% end %>
+   </section>

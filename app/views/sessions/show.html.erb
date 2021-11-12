@@ -1,0 +1,15 @@
+
+<%= form_with url: show_sessions_path do |form| %>
+  <% if @students %>
+      Student Details<br>
+      <%= @students.name %><br>
+      <%= @students.branch %><br>
+      <%= @students.year %>
+  <% else %>
+      Faculty Details<br>
+      <%= @faculty.name %><br>
+      <%= @faculty.branch %><br>
+      <%= @faculty.year %>
+  <% end %>
+
+<% end %>
