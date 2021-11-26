@@ -1,12 +1,9 @@
 <h1 class="Home-title">
-    Welcome to the Counselling Session
+    Welcome <%=session[:role] %>
 </h1>
 
-
-<h3 class="Home-authenticate"> New User,
-    <%= link_to "sign-up here",new_student_path %>
-</h3>
-
-<h3 class="Home-authenticate"> Existing User,
-    <%= link_to "sign-in here", new_sessions_path %>
-</h3>
+<%= form_tag("/students/show", method: "get") do %>
+  <%= label_tag("pin", "Enter Pin:",class:"Form-label") %>
+  <%= text_field_tag("pin",value=nil,options={placeholder:"Enter Pin",class:"Form-input",size: 30}) %>
+  <%= submit_tag("Find",class:"add-button") %>
+<% end %>

@@ -2,6 +2,7 @@ class FacultiesController < ApplicationController
 
   def index
     @faculty = Faculty.all
+    session[:role]="Faculty"
   end
   def new
     render "faculties/new"
@@ -16,13 +17,23 @@ class FacultiesController < ApplicationController
       email: params[:email],
       password: params[:password]
     )
-    flash[:success]= "Welcome dear faculty #{new_faculty.name}"
-    redirect_to faculties_path
+
+    redirect_to "/"
   end
 
   def show
     @students = Student.where("faculty_id = ?",session[:current_user_id])
 
-    @faculty =Faculty.find(params[:id])
+    @faculty =Faculty.find(session[:current_user_id])
+  end
+
+  def update
+    students = Student.where("faculty_id=?",session[:current_user_id])
+    students.each do|student|
+      student.faculty_msg= params[:faculty_msg]
+      student.save!
+    end
+    flash[:success]="Message sent to students"
+    redirect_to "/faculties/show"
   end
 end

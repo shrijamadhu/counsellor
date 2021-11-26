@@ -1,12 +1,17 @@
 <h1 class="Home-title">
-    Welcome to the Counselling Session
+    Welcome <%=session[:role] %>
 </h1>
 
 
-<h3 class="Home-authenticate"> New User,
-    <%= link_to "sign-up here",new_faculty_path %>
+<h3  class="Home-authenticate">
+<%= link_to "Register",new_faculty_path %>
+    <%= image_tag("icons8-signup-64.png",
+                            options = {class: "Image-section",align:"center"}) %>
+
 </h3>
 
-<h3 class="Home-authenticate"> Existing User,
-    <%= link_to "sign-in here", new_sessions_path %>
+<h3  class="Home-authenticate">
+    <%= link_to "Login", new_sessions_path %>
+    <%= image_tag("icons8-login-50.png",
+                            options = {class: "Image-section",align:"center"}) %>
 </h3>

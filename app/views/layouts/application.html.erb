@@ -11,10 +11,17 @@
   </head>
 
   <body>
+  <h1 class="Header-title">
+     COUNSELLING ASSISTANT</h1>
 
      <% if flash[:success] %>
         <p class="Flash-success">
            <%= flash[:success] %>
+        </p>
+     <% end %>
+     <% if flash[:error] %>
+        <p class="Flash-error">
+           <%= flash[:error] %>
         </p>
      <% end %>
     <%= yield %>

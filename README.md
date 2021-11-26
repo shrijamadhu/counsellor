@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Counselling Assistant has 4 personas:
+Admin
+Faculty
+Student
+Parent
 
-Things you may want to cover:
+Home page is at: Home/index
 
-* Ruby version
+Routes for each Persona:
+Admin : /admin
+Faculty,Student and Parent links available on root or home page
 
-* System dependencies
+Admin:
+Can Register faculties and students
 
-* Configuration
+Faculty:
+Can register
+Can Login
+Can see messages sent by students
+Can send counselling message to all students
+Can Logout
 
-* Database creation
+Student:
+Can find his/her details
+Can see message sent by Counsellor
+Can send message to Counsellor
 
-* Database initialization
+Parent
+Can find his/her child details
+Can see message sent by Counsellor
+Can see message sent by Student
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Database Tables:
+faculties
+students

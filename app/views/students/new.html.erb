@@ -1,4 +1,4 @@
-<p class="User-title">Welcome new Student</p>
+<p class="User-title">Student Registration</p>
    <section class="New-user">
       <%= form_with url: students_path do |form| %>
          <div class="Form-section">
@@ -39,7 +39,12 @@
          </div>
 
          <div class="Form-section" >
-            <%= form.submit "Sign Up" ,class: "Form-submit" %>
+            <p class="Form-label">Faculty-id</p>
+            <%= form.text_field :faculty_id ,class: "Form-input" %>
+         </div>
+
+         <div class="Form-section" >
+            <%= form.submit "Register" ,class: "add-button" %>
          </div>
       <% end %>
    </section>

@@ -1,12 +1,41 @@
-<h1><%= @faculty.name %></h1>
-Select students:
-<ul>
+<%= form_with url: show_faculties_path do |form| %>
+<h1 class="Home-title">Counselling Session : <%= @faculty.name %>
+<%= link_to "Logout" ,destroy_session_path, method: "delete",class:"Logout" %>
+<%= image_tag("icons8-sign-out-50.png",
+                            options = {class: "Image-section",align:"center"}) %></h1>
+<div class="Form-section">
+<hr class="Ruler-line">
+<p class="Form-label">Counselling students:</p>
+
+
+
+
+<table>
+<tr>
+<th><%= label_tag("name", "Name",class:"Form-label2") %></th>
+<th><%= label_tag("msg", "Students Message",class:"Form-label2") %></th>
+
 <% @students.each do|student| %>
-<li>
-<p>
-  <%= student.name %>
+<tr>
+ <td class="Form-input"> <%= student.name %></td>
+<td class="Form-input"><%=text_field_tag("student_msg",value=student.student_msg,size: 50) %></td>
+</tr>
+<% end %>
+
+
+</table>
 </p>
 
-</li>
+</div>
 <% end %>
-</ul>
+<hr class="Ruler-line">
+
+<%= form_tag("/faculties/update", method: "put") do %>
+  <p class="Form-section">
+  <%= label_tag("msg", "Enter Message for Students:",class:"Form-label") %><br>
+  <%= text_area_tag("faculty_msg","Message",class:"Form-input",cols: 65,rows: 2) %><br>
+  <%= submit_tag("Send Msg",class:"add-button",alert:"Message sent to students") %>
+  </p>
+
+
+<% end %>

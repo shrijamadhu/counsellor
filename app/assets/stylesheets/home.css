@@ -3,15 +3,29 @@
   margin-bottom: 30px;
   color: rgb(6, 54, 9);
 }
-.Home-authenticate {
+.Home-form-label {
+  color: red;
   font-size: 16px;
-  margin-bottom: 20px;
-  color: blue;
 }
+
 .Roles {
-  display: block;
+  display: inline-flex;
   list-style: none;
+  color: rgb(125, 59, 201);
+  font-size: 16px;
+  align-content: space-around;
+  margin-right: 10px;
+  font-weight: 800;
 }
 .Role-item {
   margin-bottom: 5px;
+}
+
+.add-button {
+  border: none;
+  height: 30px;
+  background-color: rgb(22, 180, 35);
+  margin-top: 10px;
+  padding: 2px 8px;
+  border-radius: 3px;
 }

@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
 
   def index
-    @students=Student.all
+    session[:role]="Student"
   end
   def new
     render "students/new"
@@ -15,13 +15,35 @@ class StudentsController < ApplicationController
       year: params[:year],
       section: params[:section],
       email: params[:email],
-      password: params[:password]
+      password: params[:password],
+      faculty_id: params[:faculty_id]
     )
     session[:name]=new_student.name
-    redirect_to students_path
+    redirect_to "/admin"
   end
 
   def show
-    @students =Student.find(params[:id])
+    @students= Student.where("pin = ?",params[:pin])
+    student = Student.find_by(pin: params[:pin])
+    if !student
+      flash[:error]="Student doesn't exist"
+      redirect_to students_path
+    end
+    session[:role]= " "
+    session[:current_user_id]= nil
+  end
+  def update
+    student = Student.find_by(pin: params[:pin])
+    student.student_msg= params[:student_msg]
+    student.save!
+    redirect_to "/"
+    session[:role]= " "
+    session[:current_user_id]= nil
+  end
+  def edit
+    @student = Student.find(params[:id])
+    @student.faculty_msg= params[:faculty_msg]
+    @student.save!
+
   end
 end

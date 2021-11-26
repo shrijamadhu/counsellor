@@ -1,14 +1,28 @@
 <h1 class="Home-title">
     Welcome to the Counselling Session
+
 </h1>
 
-<h2>Select the role
-<h3 class="Home-authenticate">
-    <%= link_to "Faculty",faculties_path %>
-    <% @role="Faculty" %>
-</h3>
+<div class="Form-section">
+<h2 class="Home-form-label">Select the role
+<%= image_tag("icons8-counseling-64.png",
+                            options = {class: "Image-section",align:"center"}) %>
+</h2>
+</div>
+<div class="Form-section">
+<p class="Roles">
+    <%= link_to "Faculty",faculties_path,id: "faculty" %>|
 
-<h3 class="Home-authenticate">
-    <%= link_to "Student", students_path %>
-    <% @role="Student" %>
-</h3>
+</p>
+
+<p class="Roles">
+    <%= link_to "Student", students_path,id: "student" %>|
+</p>
+
+<p class="Roles">
+    <%= link_to "Parent", session_path,id: "parent" %>
+</p>
+</div>
+
+<%= image_tag("counsel.jfif",
+                            options = {class: "Image-section1",align:"center"}) %>
