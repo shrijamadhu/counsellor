@@ -36,14 +36,16 @@ class StudentsController < ApplicationController
     student = Student.find_by(pin: params[:pin])
     student.student_msg= params[:student_msg]
     student.save!
-    redirect_to "/"
     session[:role]= " "
     session[:current_user_id]= nil
+    redirect_to "/"
   end
   def edit
     @student = Student.find(params[:id])
     @student.faculty_msg= params[:faculty_msg]
     @student.save!
-
+  end
+  def back
+    redirect_to "/"
   end
 end

@@ -55,3 +55,7 @@ body {
   background-color: red;
   width: 100%;
 }
+.Button-section {
+  display: flex;
+  justify-content: space-evenly;
+}

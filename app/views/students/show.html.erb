@@ -5,31 +5,34 @@
       <p class="Form-section">
       <%= label_tag("pin", "PIN:",class:"Form-label") %>
       <%= text_field_tag("pin",value = student.pin,
-                         options={class: "Form-input " ,autofocus: "autofocus",size:25})
+                         options={class: "Form-input " ,autofocus: "autofocus",size:27})
       %>
 
       <%= label_tag("name", "NAME:",class:"Form-label") %>
       <%= text_field_tag("name",value = student.name,
-                         options={class: "Form-input ",size:25 })
+                         options={class: "Form-input ",size:27 })
       %>
       </p>
       <p class="Form-section">
        <%= label_tag("msg1", "Message from Counsellor:",class:"Form-label") %><br>
       <%= text_area_tag("faculty_msg",value = student.faculty_msg,
                          options={placeholder: "Message",
-                         class: "Form-input " ,autofocus: "autofocus",cols:50,rows:2})
+                         class: "Form-input " ,autofocus: "autofocus",cols:75,rows:2})
       %>
       </p>
       <p class="Form-section">
       <%= label_tag("msg2", "Enter your problem here:",class:"Form-label") %><br>
       <%= text_area_tag("student_msg",value = student.student_msg,
                          options={placeholder: "Type your problem here",
-                         class: "Form-input " ,autofocus: "autofocus",cols:50,rows:2})
+                         class: "Form-input " ,autofocus: "autofocus",cols:75,rows:2})
       %>
       </p>
-      <p class="Form-section">
-      <%= submit_tag("Submit",class:"add-button") %>
-      </p>
+      <div class="Button-section">
+      <%= submit_tag("Send Msg to Counsellor",class:"add-button") %>
+
+
+      <%= submit_tag("Back to Home",class:"add-button",method:"back") %>
+      </div>
 <% end %>
 
 <% end %>
