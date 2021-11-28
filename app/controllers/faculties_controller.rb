@@ -17,13 +17,11 @@ class FacultiesController < ApplicationController
       email: params[:email],
       password: params[:password]
     )
-
     redirect_to "/"
   end
 
   def show
     @students = Student.where("faculty_id = ?",session[:current_user_id])
-
     @faculty =Faculty.find(session[:current_user_id])
   end
 

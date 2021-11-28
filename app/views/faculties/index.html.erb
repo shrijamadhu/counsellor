@@ -2,16 +2,15 @@
     Welcome <%=session[:role] %>
 </h1>
 
-
 <h3  class="Home-authenticate">
-<%= link_to "Register",new_faculty_path %>
+    <%= link_to "Register",new_faculty_path %>
     <%= image_tag("icons8-signup-64.png",
-                            options = {class: "Image-section",align:"center"}) %>
+    options = {class: "Image-section",align:"center"}) %>
 
 </h3>
 
 <h3  class="Home-authenticate">
-    <%= link_to "Login", new_sessions_path %>
+    <%= link_to "Login", sessions_path %>
     <%= image_tag("icons8-login-50.png",
-                            options = {class: "Image-section",align:"center"}) %>
+    options = {class: "Image-section",align:"center"}) %>
 </h3>

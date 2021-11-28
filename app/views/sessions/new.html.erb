@@ -2,6 +2,7 @@
 <h1 class="User-title">Sign-in</h1>
    <section class="New-user">
       <%= form_with url: sessions_path do |form| %>
+
          <div class="Form-section" >
             <p class="Form-label">Email:</p>
             <%= form.email_field :email ,class: "Form-input" ,
@@ -17,6 +18,5 @@
          <div class="Form-section" >
             <%= form.submit "Sign In" ,class: "add-button" %>
          </div>
-
       <% end %>
    </section>

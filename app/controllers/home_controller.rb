@@ -9,10 +9,8 @@ class HomeController < ApplicationController
       else
         session[:role]="Parent"
       end
-
-
-
-
   end
 
+  def new
+  end
 end

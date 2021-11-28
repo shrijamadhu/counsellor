@@ -4,6 +4,7 @@
 
 <%= form_tag("/sessions/show", method: "get") do %>
   <%= label_tag("pin", "Enter Pin of Student:",class:"Form-label") %>
-  <%= text_field_tag("pin",value=nil,options={placeholder:"Enter Pin",class:"Form-input"}) %>
+  <%= text_field_tag("pin",value=nil,options=
+      {placeholder:"Enter Pin",class:"Form-input"}) %>
   <%= submit_tag("Find",class:"add-button") %>
 <% end %>

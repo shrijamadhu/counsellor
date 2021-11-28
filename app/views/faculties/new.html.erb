@@ -12,14 +12,17 @@
             <p class="Form-label">Branch:</p>
             <%= form.select :branch, ["CSE","ECE","ME","AME","CE","EEE","MM","PET"] %>
          </div>
+
          <div class="Form-section">
             <p class="Form-label">Year:</p>
             <%= form.select :year, ["I","II","III","IV"] %>
          </div>
+
          <div class="Form-section">
             <p class="Form-label">Section:</p>
             <%= form.select :section, ["A","B","C"] %>
          </div>
+
          <div class="Form-section" >
             <p class="Form-label">Email:</p>
             <%= form.email_field :email ,class: "Form-input" %>

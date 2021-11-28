@@ -2,13 +2,13 @@
    <%=@student.name %>
    <%=@student.branch %>
    <p class="Form-section">
-       <%= label_tag("msg1", "Message from Counsellor:",class:"Form-label") %><br>
-      <%= text_area_tag("faculty_msg",value = @student.faculty_msg,
-                         options={placeholder: "Message",
-                         class: "Form-input " ,autofocus: "autofocus"})
-      %>
-      </p>
-      <p class="Form-section">
-      <%= submit_tag("Save",class:"add-button") %>
-      </p>
+        <%= label_tag("msg1", "Message from Counsellor:",class:"Form-label") %><br>
+        <%= text_area_tag("faculty_msg",value = @student.faculty_msg,
+                                options={placeholder: "Message",
+                                class: "Form-input " ,autofocus: "autofocus"})
+        %>
+    </p>
+    <p class="Form-section">
+        <%= submit_tag("Save",class:"add-button") %>
+    </p>
 <% end %>
