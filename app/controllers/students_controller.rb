@@ -18,14 +18,13 @@ class StudentsController < ApplicationController
       password: params[:password],
       faculty_id: params[:faculty_id]
     )
-    #session[:name]=new_student.name
     redirect_to "/admin"
   end
 
   def show
     @students= Student.where("pin = ?",params[:pin])
-    #student = Student.find_by(pin: params[:pin])
-    if !@students
+    student = Student.find_by(pin: params[:pin])
+    if !student
       flash[:error]="Student doesn't exist"
       redirect_to students_path
     end
@@ -51,4 +50,5 @@ class StudentsController < ApplicationController
   def back
     redirect_to "/"
   end
+
 end

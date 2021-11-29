@@ -1,0 +1,6 @@
+<h1 class="Form-title"> Faculty List</h1>
+<% @faculty.each do|faculty| %>
+   <p class="Form-input">
+      <%= faculty.id  %>| <%= faculty.name %> | <%=faculty.branch  %>
+   </p>
+<% end %>

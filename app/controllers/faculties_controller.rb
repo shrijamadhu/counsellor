@@ -28,10 +28,11 @@ class FacultiesController < ApplicationController
   def update
     students = Student.where("faculty_id=?",session[:current_user_id])
     students.each do|student|
-      student.faculty_msg= params[:faculty_msg]
-      student.save!
+        student.faculty_msg= params[:faculty_msg]
+        student.save!
     end
     flash[:success]="Message sent to students"
     redirect_to "/faculties/show"
   end
+
 end

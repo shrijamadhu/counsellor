@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get '/admin' =>"admin#index"
   get '/admin/signin' =>"admin#new"
   get 'admin/show' =>"admin#show"
+  get '/admin/facultyshow'
+  get '/admin/studentshow'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get "/" => "home#index"
