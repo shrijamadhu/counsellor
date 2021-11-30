@@ -17,7 +17,11 @@ class FacultiesController < ApplicationController
       email: params[:email],
       password: params[:password]
     )
-    redirect_to "/"
+    if session[:role]=="Admin"
+      render  "/admin/new"
+    else
+      render "/"
+    end
   end
 
   def show
@@ -42,7 +46,8 @@ class FacultiesController < ApplicationController
   def destroy
     faculty= Faculty.find(params[:id])
     faculty.destroy
-    redirect_to "/admin/facultyshow"
+    flash[:success]="Faculty deleted"
+    render "/admin/new"
 
   end
 

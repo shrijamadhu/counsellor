@@ -18,7 +18,7 @@ class StudentsController < ApplicationController
       password: params[:password],
       faculty_id: params[:faculty_id]
     )
-    redirect_to "/admin"
+    redirect_to "/admin/signin"
   end
 
   def show
@@ -52,7 +52,8 @@ class StudentsController < ApplicationController
   def destroy
     student= Student.find(params[:id])
     student.destroy
-    redirect_to "/admin/studentshow"
+    flash[:success]="Student deleted"
+    render "/admin/new"
 
   end
 

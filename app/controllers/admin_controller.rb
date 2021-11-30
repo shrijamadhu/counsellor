@@ -12,6 +12,7 @@ class AdminController < ApplicationController
 
   def facultyshow
     @faculty= Faculty.all
+
   end
 
   def studentshow
