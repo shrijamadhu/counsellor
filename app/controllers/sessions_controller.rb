@@ -41,7 +41,7 @@ class SessionsController < ApplicationController
       end
     else
       admin= Faculty.find_by(email: params[:email])
-      if admin.email=="abc@gmail.com"
+      if admin.email=="admin@admin.com"
         flash[:success]="Welcome Admin"
         render "/admin/new"
       else
