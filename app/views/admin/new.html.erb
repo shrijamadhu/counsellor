@@ -1,6 +1,7 @@
 <h1 class="Home-title">
     Welcome Admin
 </h1>
+<%= link_to "Logout" ,destroy_admin_path, method: "delete",class:"Logout" %>
 
 <h3  class="Home-authenticate"> Register</h3>
     <%= link_to "Faculty",new_faculty_path,class:"Form-label" %>|

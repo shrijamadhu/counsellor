@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   put "/students/update" => "students#update", as: :student_path
   delete "/faculties/destroy"
   delete "/signout" =>"sessions#destroy" , as: :destroy_session
+  delete "/admin/signout" =>"admin#destroy" , as: :destroy_admin
 end

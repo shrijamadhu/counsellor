@@ -6,17 +6,16 @@
       <th><%= label_tag("msg", "BRANCH",class:"Form-label") %></th>
 </tr>
 <% @students.each do|student| %>
-<%= form_with(url: student ,method: "delete") do %>
+
    <p class="Form-section1">
      <tr>
      <td class="Form-input1"> <%= student.pin   %></td>
       <td class="Form-input1"><%= student.name  %> </td>
       <td class="Form-input1"> <%=student.branch %></td>
-      <td class="Form-input1"><%= image_submit_tag("trash-can-outline.svg",
-                            options = {class: "trash-icon"}) %></td>
+      <td class="Form-input1"><%= link_to "Delete" ,student,method:"delete" %></td>
       </tr>
 
    </p>
-   <% end %>
+
 <% end %>
 </table>

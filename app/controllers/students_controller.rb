@@ -54,7 +54,6 @@ class StudentsController < ApplicationController
     student.destroy
     flash[:success]="Student deleted"
     render "/admin/new"
-
   end
 
 end

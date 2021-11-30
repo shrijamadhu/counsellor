@@ -19,4 +19,11 @@ class AdminController < ApplicationController
     @students= Student.all
   end
 
+  def destroy
+    session[:role]=nil
+    session[:current_user_id]=nil
+    flash[:success]=" "
+    redirect_to "/admin"
+  end
+
 end

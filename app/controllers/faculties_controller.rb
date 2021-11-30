@@ -48,7 +48,6 @@ class FacultiesController < ApplicationController
     faculty.destroy
     flash[:success]="Faculty deleted"
     render "/admin/new"
-
   end
 
 
