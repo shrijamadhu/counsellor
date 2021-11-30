@@ -59,3 +59,9 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
+
+.Form-input,
+.Form-label:hover {
+  background-color: #f1edf7;
+  cursor: pointer;
+}

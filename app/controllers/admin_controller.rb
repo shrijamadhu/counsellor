@@ -1,11 +1,10 @@
 class AdminController < ApplicationController
   def index
     session[:role]="Admin"
-
-
   end
 
   def new
+    render "/admin/new"
   end
 
   def show
