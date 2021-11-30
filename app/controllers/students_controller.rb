@@ -43,8 +43,7 @@ class StudentsController < ApplicationController
 
   def edit
     @student = Student.find(params[:id])
-    @student.faculty_msg= params[:faculty_msg]
-    @student.save!
+
   end
 
   def back

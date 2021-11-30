@@ -41,12 +41,12 @@ class SessionsController < ApplicationController
       end
     else
       admin= Faculty.find_by(email: params[:email])
-      if admin.email=="admin@admin.com"
+      if admin && admin.email=="admin@admin.com"
         flash[:success]="Welcome Admin"
         render "/admin/new"
       else
         flash[:error] = "Invalid Login attempt.Please retry."
-        redirect_to "/admin"
+        render "/admin/index"
       end
     end
   end

@@ -26,13 +26,24 @@ class FacultiesController < ApplicationController
   end
 
   def update
-    students = Student.where("faculty_id=?",session[:current_user_id])
-    students.each do|student|
+    @students = Student.where("faculty_id=?",session[:current_user_id])
+    @students.each do|student|
         student.faculty_msg= params[:faculty_msg]
         student.save!
     end
     flash[:success]="Message sent to students"
     redirect_to "/faculties/show"
   end
+
+  def back
+    redirect_to "/"
+  end
+
+  def destroy
+    faculty= Faculty.find(params[:id])
+    faculty.destroy
+
+  end
+
 
 end

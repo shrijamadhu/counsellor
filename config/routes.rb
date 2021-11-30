@@ -17,8 +17,9 @@ Rails.application.routes.draw do
 
   get "/faculties/show"  => "faculties#show", as: :show_faculties
   get "/students/show" => "students#show", as: :show_students
-
+  post "/" => "home#index"
   put "/faculties/update" => "faculties#update", as: :faculty_path
   put "/students/update" => "students#update", as: :student_path
+  delete "/faculties/destroy"
   delete "/signout" =>"sessions#destroy" , as: :destroy_session
 end

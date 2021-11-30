@@ -1,6 +1,22 @@
-<h1 class="Form-title"> Faculty List</h1>
+<h2 class="User-title"> Faculty List</h2>
+<table class="Table-section">
+<tr>
+<th><%= label_tag("pin", "ID",class:"Form-label") %></th>
+      <th><%= label_tag("name", "NAME",class:"Form-label") %></th>
+      <th><%= label_tag("msg", "BRANCH",class:"Form-label") %></th>
+</tr>
 <% @faculty.each do|faculty| %>
-   <p class="Form-input">
-      <%= faculty.id  %>| <%= faculty.name %> | <%=faculty.branch  %>
+<%= form_with(url: faculty ,method: "delete") do %>
+   <p class="Form-section1">
+     <tr>
+     <td class="Form-input1"> <%= faculty.id   %></td>
+      <td class="Form-input1"><%= faculty.name  %> </td>
+      <td class="Form-input1"> <%=faculty.branch %></td>
+      <td class="Form-input1"><%= image_submit_tag("trash-can-outline.svg",
+                            options = {class: "trash-icon"}) %></td>
+      </tr>
+
    </p>
+   <% end %>
 <% end %>
+</table>

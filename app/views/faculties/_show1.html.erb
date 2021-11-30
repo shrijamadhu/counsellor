@@ -4,27 +4,38 @@
     <p class="Form-label">Counselling students:</p>
     <table>
       <tr>
-      <th><%= label_tag("name", "Name",class:"Form-label2") %></th>
-      <th><%= label_tag("msg", "Students Message",class:"Form-label2") %></th>
+      <th><%= label_tag("name", "PIN",class:"Form-label2") %></th>
+      <th><%= label_tag("name", "NAME",class:"Form-label2") %></th>
+      <th><%= label_tag("msg", "STUDENTS MESSAGE",class:"Form-label2") %></th>
 
-      <% @students.each do|student| %>
-      <tr>
-      <td class="Form-input"> <%= student.name %></td>
-      <td class="Form-input"><%=text_field_tag("student_msg",value=student.student_msg,
-           size: 50) %></td>
-      </tr>
-      <% end %>
+      <% @students.each do |student| %>
+        <tr>
+        <td> <p class="Form-input"><%= student.pin %></p></td>
+        <td> <p class="Form-input"><%= student.name %></p></td>
+        <td><%=text_field_tag("student_msg",value=student.student_msg,
+            size: 50,class:"Form-input") %></td>
+        <td> <%= link_to "VIEW",edit_student_path(student),class:"Form-input" %></td>
+        </tr>
+        <% end %>
     </table>
-    </p>
-  </div>
+
+</div>
 
 <hr class="Ruler-line">
 
 <%= form_tag("/faculties/update", method: "put") do %>
   <p class="Form-section">
     <%= label_tag("msg", "Enter Message for Students:",class:"Form-label") %><br>
-    <%= text_area_tag("faculty_msg","Message",class:"Form-input",cols: 65,rows: 2) %><br>
-    <%= submit_tag("Send Msg",class:"add-button",alert:"Message sent to students") %>
+    <%= text_area_tag("faculty_msg","  ",class:"Form-input",autofocus: true,cols: 75,rows: 2) %><br>
+   <div class="Button-section">
+    <%= submit_tag("Send Msg",class:"add-button",method: "update") %>
+
   </p>
 <% end %>
+<%= form_tag("/", method: "post") do %>
+
+    <%= submit_tag("Back to Home",class:"add-button") %>
+
+<% end %>
+</div>
 </section>
