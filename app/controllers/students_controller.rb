@@ -49,5 +49,11 @@ class StudentsController < ApplicationController
   def back
     redirect_to "/"
   end
+  def destroy
+    student= Student.find(params[:id])
+    student.destroy
+    redirect_to "/admin/studentshow"
+
+  end
 
 end
